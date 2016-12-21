@@ -28,4 +28,13 @@ Character.py
 Description: This class defines a character object also used as a base for villains.
 Parameters:
     wearing = A dictionary that defines what clothing/armor a character is wearing
-    health = An integer value representing the HP that a character has
+    health = An integer value representing the HP that a character has remaining
+    weapon = A string used to define which item a character can use to cause damage
+    shield = A string used to define which item a character can use to protect themselves
+
+Methods:
+    injured(damage) = Deals a specified amount(integer) of damage to a character
+    heal(healed) = Heals character by a specified amount(integer)
+    getHP() = returns the health that a character has remaining as an integer
+
+################################################################################
