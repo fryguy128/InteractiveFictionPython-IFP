@@ -1,0 +1,31 @@
+Inventory.py
+--------------------------------------------------------------------------------
+Description: This class file defines the inventory object and its methods
+Parameters:
+    starterInventory = A dictionary that defines what an inventory contains at
+        its conception, Keys are item names and Values are integer values
+        representing the number of an object in the inventory
+    maxSize = The maximum number of items that can be contained in an inventory
+        as an integer value.
+
+Methods:
+    __len__ = returns the number of items in an inventory (4 toothbrushes = 4 objects)
+    __str__ = returns a string that is formatted to be printed to the screen
+        containing the inventory
+    add(item, number) = adds a number of a item as long as the inventory isn't full
+    remove(item, number) = removes a number of an item so long as there are
+        enough in the inventory
+    changeSize(newMax, change(optional)) = Changes the maximum size of the inventory
+        to an integer value, newMax. Change should either be declared as 'A' to
+        represent the addition of newMax to the previous maximum value or 'N' which
+        represents making the maximum value equal to newMax. If no value is provided
+        for change then the default is 'N'.
+
+################################################################################
+
+Character.py
+--------------------------------------------------------------------------------
+Description: This class defines a character object also used as a base for villains.
+Parameters:
+    wearing = A dictionary that defines what clothing/armor a character is wearing
+    health = An integer value representing the HP that a character has
