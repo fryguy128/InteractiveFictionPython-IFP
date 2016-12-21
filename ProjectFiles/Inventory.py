@@ -20,6 +20,10 @@ class Inventory:
     def _is_empty(self):
         return len(self) == 0
 
+    # Returns True if inventory is full
+    def isFull(self):
+        return len(self) == self._bagSize
+
     # Prints the inventory to the display
     def __str__(self):
         returnString = "You have " + str(len(self)) + " items and " + str(self._bagSize - len(self)) + " open spaces in your inventory"
@@ -73,10 +77,17 @@ class Inventory:
         if removeItems:
             if number < 1:
                 print("The number of an items used must be greater than zero.")
+                return False
             elif number > self._inventory[item]:
                 print("You don't have enough to do this.")
+                return False
             else:
                 self._inventory[item] -= number
+                if self._inventory[item] == 0:
+                    del self._inventory[item]
+                return True
+        else:
+            return False
 
     # This method is a setter method for defining a new maxSize for an inventory
     def setMax(self, newMax, change='N'):

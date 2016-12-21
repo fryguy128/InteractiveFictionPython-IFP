@@ -12,9 +12,11 @@ Methods:
     __len__ = returns the number of items in an inventory (4 toothbrushes = 4 objects)
     __str__ = returns a string that is formatted to be printed to the screen
         containing the inventory
+    isFull = Returns True if the inventory is full
     add(item, number) = adds a number of a item as long as the inventory isn't full
     remove(item, number) = removes a number of an item so long as there are
-        enough in the inventory
+        enough in the inventory. Returns True if remove is successful, Returns
+        False otherwise.
     changeSize(newMax, change(optional)) = Changes the maximum size of the inventory
         to an integer value, newMax. Change should either be declared as 'A' to
         represent the addition of newMax to the previous maximum value or 'N' which
@@ -27,7 +29,8 @@ Character.py
 --------------------------------------------------------------------------------
 Description: This class defines a character object also used as a base for villains.
 Parameters:
-    wearing = A list that defines what clothing/armor a character is wearing
+    wearing = A dictionary that defines what clothing/armor a character is wearing
+        in the format of {'Hat': item, 'Shirt': item, 'Pants': item, 'Shoes': item}
     health = An integer value representing the HP that a character has remaining
     weapon = A string used to define which item a character can use to cause damage
     shield = A string used to define which item a character can use to protect themselves
@@ -36,5 +39,8 @@ Methods:
     injured(damage) = Deals a specified amount(integer) of damage to a character
     heal(healed) = Heals character by a specified amount(integer)
     getHP() = returns the health that a character has remaining as an integer
-
+    setClothing(item, article) = Changes an item of clothing to a new article
+    removeClothing(item) = Removes a specified item of clothing and sets the
+        value of the item to None placing the removed item into the character's
+        inventory.
 ################################################################################
