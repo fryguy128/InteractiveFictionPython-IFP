@@ -2,7 +2,8 @@
 
 
 class Character:
-    def __init__(self, wearing, health, weapon, shield):
+    def __init__(self, name, wearing, health, weapon, shield):
+        self._name = name
         self._wearing = wearing
         self._health = health
         self._weapon = weapon
@@ -15,7 +16,7 @@ class Character:
             if damage < 0:
                 print("Negative damage is not possible!")
                 injure = False
-        except ValueError:
+        except TypeError:
             print("That much damage is not possible!")
             injure = False
         if injure:
@@ -28,7 +29,7 @@ class Character:
             if healed < 0:
                 print("Negative healing is not possible!")
                 canHeal = False
-        except ValueError:
+        except TypeError:
             print("That much healing is not possible!")
             canHeal = False
         if canHeal:
